@@ -70,7 +70,7 @@ library game
 
     build-depends:    base ^>=4.21.0.0, 
 
-    exposed-modules:  
+    exposed-modules:  ClassicState 
 
     hs-source-dirs:   game
 
