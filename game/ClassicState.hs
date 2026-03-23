@@ -1,6 +1,13 @@
 module ClassicState where
 
-data ClassicState = ClassicState
+import AbstractState
+
+data ClassicState =
+  ClassicState
   deriving (Show)
 
+checkWinner :: ClassicState -> Maybe Player
+checkWinner = undefined
 
+makeMove :: ClassicState -> Point -> Player -> ClassicState
+makeMove = undefined
