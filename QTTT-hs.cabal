@@ -63,15 +63,19 @@ common common
     -- Base language which the package is written in.
     default-extensions: DeriveGeneric
                       , DeriveAnyClass
+                      , FunctionalDependencies
+                      , AllowAmbiguousTypes
                       , OverloadedStrings
 
 library game 
     import:           common
 
-    build-depends:    base ^>=4.21.0.0, 
+    build-depends:    base ^>=4.21.0.0 
+                    , vector
 
-    exposed-modules:  AbstractState
-                      ClassicState 
+    exposed-modules:  Position 
+                      Matrix
+                      ClassicPosition 
 
     hs-source-dirs:   game
 
@@ -103,6 +107,8 @@ test-suite test
     hs-source-dirs:   tests
 
     main-is:          Test.hs
+
+    other-modules:    MatrixTests
 
     build-depends:    base ^>=4.21.0.0,
                       tasty,
