@@ -75,7 +75,8 @@ library game
 
     exposed-modules:  Position 
                       Matrix
-                      ClassicPosition 
+                      ClassicPosition
+                      QuantumPosition
 
     hs-source-dirs:   game
 
