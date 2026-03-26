@@ -65,6 +65,8 @@ common common
                       , DeriveAnyClass
                       , FunctionalDependencies
                       , AllowAmbiguousTypes
+                      , QuantifiedConstraints
+                      , UndecidableInstances
                       , OverloadedStrings
 
 library game 
