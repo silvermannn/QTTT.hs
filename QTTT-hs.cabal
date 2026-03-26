@@ -72,6 +72,7 @@ library game
 
     build-depends:    base ^>=4.21.0.0 
                     , vector
+                    , random 
 
     exposed-modules:  Position 
                       Matrix

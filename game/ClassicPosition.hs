@@ -6,20 +6,24 @@ import Data.Maybe
 import Matrix
 import Position
 
-newtype ClassicPosition =
-  ClassicPosition (Matrix Cell)
-  deriving (Show)
+newtype ClassicPosition = ClassicPosition
+  { getMatrix :: Matrix Cell
+  } deriving (Show)
 
 type ClassicMove = Coord
 
 type Cell = Maybe Player
 
+data ClassicParams =
+  ClassicParams Int Int
+  deriving (Show)
+
 data Triple a =
   Triple a a a
   deriving (Show)
 
-instance Position ClassicPosition ClassicMove where
-  initialPosition = ClassicPosition $ newMatrix (Coord 3 3) Nothing
+instance Position ClassicPosition ClassicMove ClassicParams where
+  initialPosition (ClassicParams sx sy) = ClassicPosition $ newMatrix (Coord sx sy) Nothing
   checkWinner p = asum $ map isTripleWin $ getTriples p
   makeMove (ClassicPosition m) player c =
     case getAt m c of

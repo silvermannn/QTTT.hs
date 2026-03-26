@@ -10,7 +10,7 @@ data Matrix a = Matrix
 
 data Coord =
   Coord Int Int
-  deriving (Show, Eq)
+  deriving (Show, Eq, Ord)
 
 validCoord :: Coord -> Coord -> Bool
 validCoord (Coord mx my) (Coord x y) = x < mx && y < my

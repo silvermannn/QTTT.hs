@@ -5,8 +5,8 @@ data Player
   | PlayerO
   deriving (Show, Eq)
 
-class Position p m | p -> m where
-  initialPosition :: p
-  makeMove :: p -> Player -> m -> Maybe p
-  checkWinner :: p -> Maybe Player
-  generateMoves :: p -> [m]
+class Position position move params | position -> move, position -> params where
+  initialPosition :: params -> position
+  makeMove :: position -> Player -> move -> Maybe position
+  checkWinner :: position -> Maybe Player
+  generateMoves :: position -> [move]
